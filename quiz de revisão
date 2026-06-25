@@ -6,38 +6,28 @@
 <title>Quiz — Recrutamento e Seleção · UNISUAM</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f4f2ee;min-height:100vh;color:#1a1a18}
-.page{max-width:720px;margin:0 auto;padding:2rem 1rem}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f4f2ee;min-height:100vh;color:#1a1a18;font-size:15px}
+.page{max-width:720px;margin:0 auto;padding:1.5rem 1rem}
 .screen{display:none}
 .screen.active{display:block}
 h1{font-size:24px;font-weight:600;color:#1a1a18;margin-bottom:.35rem}
-h2{font-size:20px;font-weight:600;color:#1a1a18;margin-bottom:1rem}
-p{font-size:15px;color:#5f5e5a;line-height:1.65}
-
-/* header */
-.site-header{background:#fff;border-bottom:1px solid #e0ddd6;padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
-.logo{font-size:15px;font-weight:600;color:#1a1a18;display:flex;align-items:center;gap:8px}
-.logo-dot{width:10px;height:10px;border-radius:50%;background:#5434b7}
+h2{font-size:18px;font-weight:600;color:#1a1a18;margin-bottom:1rem}
+p{font-size:14px;color:#5f5e5a;line-height:1.65}
+.site-header{background:#fff;border-bottom:1px solid #e0ddd6;padding:.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.logo{font-size:14px;font-weight:600;color:#1a1a18;display:flex;align-items:center;gap:8px}
+.logo-dot{width:9px;height:9px;border-radius:50%;background:#5434b7}
 .nav-link{font-size:13px;color:#888780;cursor:pointer;padding:4px 10px;border-radius:6px;transition:background .15s}
 .nav-link:hover,.nav-link.active{background:#eeedfe;color:#5434b7}
-
-/* cards */
 .card{background:#fff;border:1px solid #e0ddd6;border-radius:14px;padding:1.5rem}
 .card-sm{background:#fff;border:1px solid #e0ddd6;border-radius:10px;padding:1rem 1.25rem}
-
-/* badges */
 .badge{display:inline-block;font-size:12px;padding:3px 10px;border-radius:6px;font-weight:500}
 .badge-purple{background:#eeedfe;color:#3c3489}
 .badge-green{background:#eaf3de;color:#27500a}
 .badge-red{background:#fcebeb;color:#791f1f}
 .badge-amber{background:#faeeda;color:#633806}
 .badge-gray{background:#f1efe8;color:#444441}
-
-/* progress */
 .prog-wrap{height:6px;background:#e0ddd6;border-radius:4px;margin:1rem 0}
 .prog-fill{height:100%;background:#5434b7;border-radius:4px;transition:width .3s}
-
-/* options */
 .opt{display:flex;align-items:flex-start;gap:10px;padding:.8rem 1rem;border:1px solid #e0ddd6;border-radius:10px;cursor:pointer;margin-bottom:.5rem;font-size:14px;color:#1a1a18;line-height:1.55;transition:background .15s,border-color .15s;background:#fff}
 .opt:hover{background:#f4f2ee;border-color:#b4b2a9}
 .opt.correct{border-color:#639922;background:#eaf3de;color:#27500a}
@@ -46,52 +36,35 @@ p{font-size:15px;color:#5f5e5a;line-height:1.65}
 .letter{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1px solid #d3d1c7;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#888780}
 .opt.correct .letter{border-color:#639922;background:#c0dd97;color:#27500a}
 .opt.wrong .letter{border-color:#a32d2d;background:#f7c1c1;color:#791f1f}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:6px;padding:.6rem 1.25rem;border:1px solid #d3d1c7;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;background:#fff;color:#1a1a18;transition:background .15s,transform .1s;text-decoration:none}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:.6rem 1.25rem;border:1px solid #d3d1c7;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;background:#fff;color:#1a1a18;transition:background .15s;font-family:inherit}
 .btn:hover{background:#f4f2ee}
-.btn:active{transform:scale(.98)}
 .btn-primary{background:#5434b7;color:#fff;border-color:#5434b7}
 .btn-primary:hover{background:#3c3489}
 .btn-outline{background:transparent;color:#5434b7;border-color:#5434b7}
 .btn-outline:hover{background:#eeedfe}
-
-/* explanation */
 .expl{margin-top:.75rem;padding:.75rem 1rem;background:#f4f2ee;border-left:3px solid #5434b7;border-radius:0 8px 8px 0;font-size:13px;color:#444441;line-height:1.6;display:none}
-
-/* score */
-.score-big{font-size:64px;font-weight:700;color:#1a1a18;text-align:center;line-height:1;margin:1rem 0 .25rem}
-.score-sub{text-align:center;font-size:15px;color:#888780;margin-bottom:1.25rem}
+.score-big{font-size:60px;font-weight:700;color:#1a1a18;text-align:center;line-height:1;margin:1rem 0 .25rem}
+.score-sub{text-align:center;font-size:14px;color:#888780;margin-bottom:1.25rem}
 .badges-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
-
-/* rank table */
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{text-align:left;padding:8px 10px;color:#888780;border-bottom:1px solid #e0ddd6;font-weight:500}
 td{padding:8px 10px;border-bottom:1px solid #e0ddd6;color:#1a1a18}
 tr:last-child td{border-bottom:none}
 tr.top{background:#faeeda}
-
-/* stat grid */
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:1.25rem}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:1.25rem}
 .stat{background:#f4f2ee;border-radius:8px;padding:.8rem 1rem}
-.stat-label{font-size:12px;color:#888780;margin-bottom:4px}
-.stat-val{font-size:22px;font-weight:600;color:#1a1a18}
-
-/* home hero */
-.hero{background:linear-gradient(135deg,#5434b7,#3c3489);border-radius:16px;padding:2rem;color:#fff;margin-bottom:1.5rem}
-.hero h1{color:#fff;font-size:26px}
-.hero p{color:rgba(255,255,255,.8);margin-top:.5rem}
-.hero-meta{display:flex;gap:10px;margin-top:1.25rem;flex-wrap:wrap}
-.hero-tag{background:rgba(255,255,255,.18);color:#fff;font-size:12px;padding:4px 10px;border-radius:20px}
-
-/* empty */
-.empty{text-align:center;padding:2rem;color:#888780;font-size:14px}
-
-@media(max-width:480px){
-  .page{padding:1rem .75rem}
-  .score-big{font-size:48px}
-  .card{padding:1.1rem}
-}
+.stat-label{font-size:11px;color:#888780;margin-bottom:4px}
+.stat-val{font-size:20px;font-weight:600;color:#1a1a18}
+.hero{background:linear-gradient(135deg,#5434b7,#3c3489);border-radius:16px;padding:1.75rem;color:#fff;margin-bottom:1.25rem}
+.hero h1{color:#fff;font-size:22px}
+.hero p{color:rgba(255,255,255,.8);margin-top:.4rem;font-size:13px}
+.hero-meta{display:flex;gap:8px;margin-top:1rem;flex-wrap:wrap}
+.hero-tag{background:rgba(255,255,255,.18);color:#fff;font-size:11px;padding:3px 10px;border-radius:20px}
+.empty{text-align:center;padding:2rem;color:#888780;font-size:13px}
+.name-form{display:flex;flex-direction:column;gap:.75rem;margin-top:1rem}
+.name-input{padding:.65rem 1rem;border:1px solid #d3d1c7;border-radius:8px;font-size:14px;font-family:inherit;color:#1a1a18;background:#fff;outline:none;transition:border-color .15s}
+.name-input:focus{border-color:#5434b7}
+.shared-note{font-size:11px;color:#888780;text-align:center;margin-top:.75rem;padding:.5rem;background:#f4f2ee;border-radius:6px}
 </style>
 </head>
 <body>
@@ -100,7 +73,7 @@ tr.top{background:#faeeda}
   <div class="logo"><span class="logo-dot"></span>Quiz RH · UNISUAM</div>
   <div style="display:flex;gap:4px">
     <span class="nav-link active" id="nav-home" onclick="showScreen('home')">Início</span>
-    <span class="nav-link" id="nav-rank" onclick="showScreen('ranking')">Ranking</span>
+    <span class="nav-link" id="nav-rank" onclick="goRanking()">Ranking</span>
   </div>
 </header>
 
@@ -111,29 +84,39 @@ tr.top{background:#faeeda}
     <div class="hero">
       <h1>Recrutamento e Seleção</h1>
       <p>Módulo 2 · Curso de Tecnologia em Gestão de Recursos Humanos</p>
-      <p style="margin-top:.25rem;font-size:13px;opacity:.7">Prof.ª Cátia Regina França de Sousa Gaião e Silva, DSc</p>
+      <p style="margin-top:.2rem;font-size:12px;opacity:.65">Prof.ª Cátia Regina França de Sousa Gaião e Silva, DSc</p>
       <div class="hero-meta">
         <span class="hero-tag">35 questões no banco</span>
         <span class="hero-tag">14 por avaliação</span>
-        <span class="hero-tag">Sorteio aleatório</span>
-        <span class="hero-tag">Múltipla escolha</span>
+        <span class="hero-tag">Ranking partilhado 🌍</span>
       </div>
     </div>
-
     <div class="card-sm" style="margin-bottom:1rem">
       <p style="color:#1a1a18;font-weight:500;margin-bottom:.4rem">Como funciona</p>
-      <p>Cada avaliação sorteia 14 questões aleatórias do banco. Ao responder, você vê imediatamente se acertou ou errou com uma explicação. No final, seu resultado é salvo no ranking.</p>
+      <p>Cada avaliação sorteia 14 questões aleatórias. O resultado é guardado no <strong style="color:#5434b7">ranking global</strong> — visível para todos os participantes.</p>
     </div>
-
     <div style="margin-bottom:1.5rem">
-      <button class="btn btn-primary" onclick="startQuiz()" style="font-size:15px;padding:.7rem 1.75rem">Iniciar avaliação →</button>
+      <button class="btn btn-primary" onclick="askName()" style="font-size:15px;padding:.7rem 1.75rem">Iniciar avaliação →</button>
     </div>
-
-    <div id="home-stats" style="margin-bottom:1.5rem"></div>
-
     <div>
-      <h2>Histórico recente</h2>
-      <div id="home-rank"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
+        <h2 style="margin-bottom:0">Ranking recente</h2>
+        <span style="font-size:11px;color:#888780">🌍 visível para todos</span>
+      </div>
+      <div id="home-rank"><div style="color:#888780;font-size:13px;padding:.5rem 0">A carregar...</div></div>
+    </div>
+  </div>
+
+  <!-- NAME -->
+  <div id="name-screen" class="screen">
+    <div class="card" style="max-width:400px;margin:2rem auto">
+      <h2>Como te chamas?</h2>
+      <p>O teu nome aparecerá no ranking global, visível para todos os participantes.</p>
+      <div class="name-form">
+        <input class="name-input" id="player-name" type="text" placeholder="Ex: Maria Silva" maxlength="30" onkeydown="if(event.key==='Enter')confirmName()">
+        <button class="btn btn-primary" onclick="confirmName()">Começar →</button>
+        <button class="btn" onclick="showScreen('home')">Cancelar</button>
+      </div>
     </div>
   </div>
 
@@ -144,14 +127,11 @@ tr.top{background:#faeeda}
       <span class="badge badge-gray" id="q-topic"></span>
     </div>
     <div class="prog-wrap"><div class="prog-fill" id="prog" style="width:0%"></div></div>
-
     <div class="card" style="margin-bottom:1rem">
-      <p id="q-text" style="font-size:16px;color:#1a1a18;font-weight:500;line-height:1.6"></p>
+      <p id="q-text" style="font-size:15px;color:#1a1a18;font-weight:500;line-height:1.6"></p>
     </div>
-
     <div id="opts"></div>
     <div class="expl" id="q-expl"></div>
-
     <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1.25rem">
       <div id="live-score" style="font-size:13px;color:#888780"></div>
       <button class="btn btn-primary" id="next-btn" style="display:none" onclick="nextQ()">Próxima →</button>
@@ -174,32 +154,41 @@ tr.top{background:#faeeda}
         <div class="stat"><div class="stat-label">Erros</div><div class="stat-val" id="st-err" style="color:#a32d2d"></div></div>
         <div class="stat"><div class="stat-label">Aproveitamento</div><div class="stat-val" id="st-pct" style="color:#5434b7"></div></div>
       </div>
+      <div id="save-status" style="font-size:13px;color:#888780;margin-bottom:1rem"></div>
       <div style="display:flex;gap:.5rem;flex-wrap:wrap">
-        <button class="btn btn-primary" onclick="startQuiz()">Nova tentativa →</button>
-        <button class="btn btn-outline" onclick="showScreen('ranking')">Ver ranking</button>
+        <button class="btn btn-primary" onclick="askName()">Nova tentativa →</button>
+        <button class="btn btn-outline" onclick="goRanking()">Ver ranking</button>
         <button class="btn" onclick="showScreen('home')">Início</button>
       </div>
     </div>
-
-    <h2>Ranking</h2>
-    <div id="result-rank"></div>
+    <h2>Top ranking</h2>
+    <div id="result-rank"><div style="color:#888780;font-size:13px">A carregar...</div></div>
   </div>
 
   <!-- RANKING -->
   <div id="ranking" class="screen">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:.5rem">
-      <h2 style="margin-bottom:0">Ranking geral</h2>
-      <button class="btn" onclick="clearHistory()" style="font-size:12px;color:#a32d2d;border-color:#f09595">Limpar histórico</button>
+      <h2 style="margin-bottom:0">Ranking global 🌍</h2>
+      <button class="btn" onclick="loadRanking('full-rank',50)" style="font-size:12px">↻ Atualizar</button>
     </div>
-    <div id="full-rank"></div>
+    <p style="margin-bottom:1rem">Resultados de todos os participantes, do melhor para o pior.</p>
+    <div id="full-rank"><div style="color:#888780;font-size:13px">A carregar...</div></div>
+    <div class="shared-note">🔒 Dados partilhados e visíveis para todos os participantes</div>
     <div style="margin-top:1rem">
-      <button class="btn btn-primary" onclick="startQuiz()">Nova avaliação →</button>
+      <button class="btn btn-primary" onclick="askName()">Nova avaliação →</button>
     </div>
   </div>
 
 </div>
 
 <script>
+// ── FIREBASE CONFIG ──────────────────────────────────────────────
+// Para o ranking funcionar em produção, substitua os valores abaixo
+// pelos da SUA base de dados Firebase Realtime Database.
+// Instruções: https://firebase.google.com/docs/web/setup
+const FIREBASE_URL = "https://quiz-rh-unisuam-default-rtdb.firebaseio.com";
+
+// ── QUESTÕES ────────────────────────────────────────────────────
 const ALL_Q=[
 {t:"Conceito de Recrutamento",q:"Segundo Marras (2000), agregar pessoas é atividade fundamental da estratégia de toda organização que procura aplicar o recrutamento e a seleção como parte de um mesmo processo. Como esse processo é denominado?",opts:["Provisão de recursos humanos","Avaliação de desempenho","Diagnóstico de clima organizacional","Gestão por competências"],ans:0,e:"Marras (2000) define esse processo conjunto como 'a provisão de recursos humanos'."},
 {t:"Conceito de Recrutamento",q:"O recrutamento pode ser definido como um conjunto de técnicas e procedimentos cujo objetivo principal é:",opts:["Demitir funcionários com baixo desempenho","Atrair candidatos potencialmente qualificados e capazes de ocupar cargos","Elaborar o plano de cargos e salários","Realizar avaliações de desempenho periódicas"],ans:1,e:"O recrutamento visa atrair candidatos qualificados e capazes de ocupar cargos na organização."},
@@ -222,26 +211,24 @@ const ALL_Q=[
 {t:"Avaliação de Desempenho",q:"Um ponto fraco comum no processo de avaliação de desempenho é:",opts:["Excesso de clareza nos critérios avaliados","Processo injusto ou tendencioso","Muita objetividade na definição de metas","Transparência excessiva com os avaliados"],ans:1,e:"Processos injustos ou tendenciosos são um dos pontos fracos mais comuns na avaliação de desempenho."},
 {t:"Avaliação por Objetivos",q:"A avaliação de desempenho por objetivos e resultados envolve:",opts:["Apenas o RH definindo as metas sem envolver o colaborador","Líder e subordinado reunindo-se para criar metas e, ao término do período, verificar se foram cumpridas","Somente a avaliação comportamental do colaborador","A aplicação de testes psicométricos padronizados"],ans:1,e:"Na avaliação por objetivos, líder e subordinado criam metas juntos e depois verificam o cumprimento ao final do período."},
 {t:"Avaliação por Competências",q:"Na avaliação de desempenho por competências, o colaborador é avaliado:",opts:["Apenas por seu desempenho técnico no cargo","Não apenas pelo desempenho no cargo, mas também por sua performance como membro da organização","Somente com base em seu tempo de empresa","Exclusivamente por métricas financeiras"],ans:1,e:"A avaliação por competências considera o desempenho no cargo e a performance do colaborador como membro da organização."},
-{t:"CHA",q:"No mapa de competências CHA, a letra 'H' representa:",opts:["Honestidade, integridade e conduta ética","Habilidade — capacidade de transformar conhecimento em ação","Hierarquia e nível de autoridade do cargo","Histórico profissional e formação acadêmica"],ans:1,e:"'H' no CHA representa Habilidade: a capacidade de transformar conhecimento em ação (técnica, humana e conceitual)."},
-{t:"CHA",q:"O modelo de competências CHAVE expande o CHA tradicional acrescentando as letras V e E, que representam:",opts:["Versatilidade e Eficiência","Valores e Entorno (responsabilidade socioambiental e cidadania)","Visão e Estratégia","Velocidade e Excelência"],ans:1,e:"O modelo CHAVE adiciona V (Valores organizacionais e individuais) e E (Entorno/responsabilidade socioambiental)."},
+{t:"CHA",q:"No mapa de competências CHA, a letra 'H' representa:",opts:["Honestidade, integridade e conduta ética","Habilidade — capacidade de transformar conhecimento em ação","Hierarquia e nível de autoridade do cargo","Histórico profissional e formação acadêmica"],ans:1,e:"'H' no CHA representa Habilidade: a capacidade de transformar conhecimento em ação."},
+{t:"CHA",q:"O modelo de competências CHAVE expande o CHA tradicional acrescentando as letras V e E, que representam:",opts:["Versatilidade e Eficiência","Valores e Entorno (responsabilidade socioambiental e cidadania)","Visão e Estratégia","Velocidade e Excelência"],ans:1,e:"O modelo CHAVE adiciona V (Valores) e E (Entorno/responsabilidade socioambiental)."},
 {t:"Três Habilidades",q:"A habilidade conceitual, necessária principalmente ao nível institucional (alta direção), é definida como:",opts:["A capacidade de usar procedimentos e técnicas de um campo de especialização","A capacidade de trabalhar com outras pessoas e motivá-las","A capacidade de coordenar e integrar todos os interesses e atividades de uma organização","A capacidade de operar máquinas e equipamentos"],ans:2,e:"A habilidade conceitual envolve coordenar e integrar todos os interesses e atividades da organização."},
-{t:"Três Habilidades",q:"Qual habilidade é mais requerida no nível operacional (supervisão)?",opts:["Habilidade conceitual","Habilidade humana","Habilidade técnica","Habilidade estratégica"],ans:2,e:"No nível operacional, a habilidade técnica — manuseio de coisas físicas — é predominante."},
+{t:"Três Habilidades",q:"Qual habilidade é mais requerida no nível operacional (supervisão)?",opts:["Habilidade conceitual","Habilidade humana","Habilidade técnica","Habilidade estratégica"],ans:2,e:"No nível operacional, a habilidade técnica é predominante."},
 {t:"TICs e RH",q:"Com a implementação das TICs, o RH transita de um modelo tradicional para um RH Estratégico. O que caracteriza o RH Estratégico?",opts:["Foco em tarefas manuais e burocracia","Atuação como parceiro estratégico do negócio, focado em desenvolvimento de capital humano","Concentração em folha de pagamento e controle de presença","Dependência de métodos convencionais como memorandos"],ans:1,e:"O RH Estratégico atua como parceiro de negócio focado em capital humano, talentos e cultura organizacional."},
 {t:"TICs e RH",q:"O uso de analytics no RH possibilita:",opts:["Substituir completamente as entrevistas de seleção","Analisar desempenho, engajamento e rotatividade para antecipar necessidades","Eliminar a necessidade de avaliação de desempenho","Automatizar a demissão de colaboradores"],ans:1,e:"Analytics permite análise detalhada de desempenho e engajamento, auxiliando o RH a antecipar necessidades."},
 {t:"IA no Processo Seletivo",q:"Como a IA pode contribuir na triagem de currículos?",opts:["Substituindo completamente a decisão humana de contratação","Automatizando a leitura e o filtro inicial, identificando candidatos alinhados aos requisitos da vaga","Eliminando a necessidade de entrevistas","Gerando automaticamente o contrato de trabalho"],ans:1,e:"A IA automatiza a triagem inicial, identificando rapidamente candidatos que se encaixam nos requisitos da vaga."},
-{t:"IA no Processo Seletivo",q:"A redução de viés na seleção por meio de IA ocorre quando:",opts:["Todos os candidatos são avaliados pelo mesmo gestor","Algoritmos bem configurados minimizam preconceitos inconscientes, focando nas qualidades reais do candidato","A IA substitui completamente o RH no processo","Os candidatos preenchem formulários anônimos"],ans:1,e:"Algoritmos bem configurados podem minimizar preconceitos inconscientes, tornando a seleção mais justa e inclusiva."},
+{t:"IA no Processo Seletivo",q:"A redução de viés na seleção por meio de IA ocorre quando:",opts:["Todos os candidatos são avaliados pelo mesmo gestor","Algoritmos bem configurados minimizam preconceitos inconscientes, focando nas qualidades reais do candidato","A IA substitui completamente o RH no processo","Os candidatos preenchem formulários anônimos"],ans:1,e:"Algoritmos bem configurados podem minimizar preconceitos inconscientes, tornando a seleção mais justa."},
 {t:"Clima Organizacional",q:"O diagnóstico de clima organizacional visa identificar:",opts:["Apenas os problemas financeiros da empresa","Como os colaboradores percebem o ambiente de trabalho, as práticas da empresa e suas condições para desempenhar funções","Exclusivamente o nível de satisfação com a remuneração","O desempenho individual de cada colaborador"],ans:1,e:"O diagnóstico de clima identifica como os colaboradores percebem o ambiente e as condições de trabalho."},
 {t:"Clima Organizacional",q:"Para garantir a credibilidade do diagnóstico de clima organizacional, é fundamental:",opts:["Identificar os respondentes pelo nome para responsabilizá-los","Assegurar anonimato, explicar a finalidade e demonstrar que os resultados gerarão melhorias reais","Aplicar o questionário apenas para gestores","Divulgar os resultados individualmente para cada colaborador"],ans:1,e:"A credibilidade depende de anonimato, transparência sobre a finalidade e compromisso com melhorias reais."},
 {t:"Clima Organizacional",q:"O diagnóstico de clima organizacional só gera valor quando:",opts:["Os resultados são mantidos em sigilo pela diretoria","Resulta em melhorias concretas, com prioridades, responsáveis, metas mensuráveis e prazos","É realizado anualmente por consultoria externa","Os colaboradores participam de forma voluntária apenas"],ans:1,e:"O diagnóstico precisa resultar em um plano de ação com prioridades, responsáveis, metas e prazos definidos."},
-{t:"Endomarketing",q:"O principal objetivo do Endomarketing em parceria com o RH é:",opts:["Aumentar as vendas externas da empresa","Engajar, motivar e alinhar os colaboradores aos valores, objetivos e cultura da organização","Atrair candidatos externos para vagas abertas","Reduzir o turnover por meio de benefícios financeiros exclusivamente"],ans:1,e:"O Endomarketing visa engajar e alinhar colaboradores aos valores e cultura da organização, fortalecendo a comunicação interna."},
-{t:"Endomarketing",q:"A dificuldade mais comum na implementação do Endomarketing é:",opts:["Excesso de recursos financeiros disponíveis","Falta de alinhamento entre o discurso e a prática da empresa, gerando descrença nos colaboradores","Resistência da alta liderança ao uso de tecnologia","Falta de candidatos qualificados no mercado"],ans:1,e:"A principal dificuldade é o desalinhamento entre o que a empresa comunica e o que pratica, gerando descrença."},
+{t:"Endomarketing",q:"O principal objetivo do Endomarketing em parceria com o RH é:",opts:["Aumentar as vendas externas da empresa","Engajar, motivar e alinhar os colaboradores aos valores, objetivos e cultura da organização","Atrair candidatos externos para vagas abertas","Reduzir o turnover por meio de benefícios financeiros exclusivamente"],ans:1,e:"O Endomarketing visa engajar e alinhar colaboradores aos valores e cultura da organização."},
+{t:"Endomarketing",q:"A dificuldade mais comum na implementação do Endomarketing é:",opts:["Excesso de recursos financeiros disponíveis","Falta de alinhamento entre o discurso e a prática da empresa, gerando descrença nos colaboradores","Resistência da alta liderança ao uso de tecnologia","Falta de candidatos qualificados no mercado"],ans:1,e:"A principal dificuldade é o desalinhamento entre o que a empresa comunica e o que pratica."},
 {t:"Recrutamento Interno",q:"Qual vantagem o recrutamento interno oferece ao colaborador?",opts:["Acesso a novos talentos externos","A organização oferece uma carreira de oportunidades ao colaborador","Redução do custo de treinamento","Maior diversidade de perfis na equipe"],ans:1,e:"O recrutamento interno oferece ao colaborador uma carreira de oportunidades dentro da própria organização."},
 {t:"Avaliação de Desempenho",q:"A avaliação de desempenho, sob a perspectiva de 'Relacionamento e Percepção', proporciona:",opts:["Apenas métricas numéricas de produtividade","Meios para que cada funcionário saiba o que pessoas ao seu redor pensam, melhorando sua autopercepção","Exclusivamente dados para promoção salarial","Um sistema de punição para baixo desempenho"],ans:1,e:"A avaliação melhora a autopercepção do colaborador e seu relacionamento interpessoal no trabalho."},
 ];
 
-let session=[],cur=0,sc=0,chosen=null;
-let history=[];
-try{history=JSON.parse(localStorage.getItem('quiz_rh_v2')||'[]');}catch(e){history=[];}
+let session=[],cur=0,sc=0,chosen=null,playerName='';
 
 function shuffle(a){let b=[...a];for(let i=b.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b}
 
@@ -255,10 +242,25 @@ function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   setNav(id);
-  if(id==='home'){renderHomeStats();renderRankTable('home-rank',5);}
-  if(id==='ranking'){renderRankTable('full-rank',50);}
-  if(id==='result'){renderRankTable('result-rank',10);}
   window.scrollTo(0,0);
+}
+
+function goRanking(){
+  showScreen('ranking');
+  loadRanking('full-rank',50);
+}
+
+function askName(){
+  showScreen('name-screen');
+  setNav('');
+  setTimeout(()=>document.getElementById('player-name').focus(),100);
+}
+
+function confirmName(){
+  const n=document.getElementById('player-name').value.trim();
+  if(!n){document.getElementById('player-name').focus();return;}
+  playerName=n;
+  startQuiz();
 }
 
 function startQuiz(){
@@ -311,13 +313,37 @@ function nextQ(){
   renderQ();
 }
 
-function finishQuiz(){
+async function saveToFirebase(entry){
+  try{
+    const res=await fetch(FIREBASE_URL+'/ranking.json',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(entry)
+    });
+    return res.ok;
+  }catch(e){return false;}
+}
+
+async function loadFromFirebase(){
+  try{
+    const res=await fetch(FIREBASE_URL+'/ranking.json');
+    const data=await res.json();
+    if(!data)return[];
+    return Object.values(data);
+  }catch(e){return[];}
+}
+
+async function finishQuiz(){
   const pct=Math.round((sc/14)*100);
   const now=new Date();
-  const entry={score:sc,pct,date:now.toLocaleDateString('pt-BR'),time:now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}),ts:now.getTime()};
-  history.unshift(entry);
-  if(history.length>50)history.pop();
-  try{localStorage.setItem('quiz_rh_v2',JSON.stringify(history));}catch(e){}
+  const entry={
+    name:playerName,
+    score:sc,
+    pct,
+    date:now.toLocaleDateString('pt-BR'),
+    time:now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}),
+    ts:now.getTime()
+  };
 
   document.getElementById('score-num').textContent=sc+'/14';
   let msg=sc>=13?'🏆 Perfeito! Excelente domínio do conteúdo!':sc>=11?'🎉 Ótimo resultado! Continue assim!':sc>=9?'👍 Bom trabalho! Ainda há espaço para melhorar.':sc>=7?'📖 Regular. Revise os tópicos com mais atenção.':'💪 Revise o conteúdo e tente novamente!';
@@ -329,44 +355,36 @@ function finishQuiz(){
   document.getElementById('st-err').textContent=14-sc;
   document.getElementById('st-pct').textContent=pct+'%';
   showScreen('result');
+
+  document.getElementById('save-status').textContent='💾 A guardar no ranking...';
+  const ok=await saveToFirebase(entry);
+  document.getElementById('save-status').textContent=ok?'✅ Guardado no ranking global!':'⚠️ Não foi possível guardar. Verifique a ligação.';
+  loadRanking('result-rank',10);
 }
 
-function renderHomeStats(){
-  const el=document.getElementById('home-stats');
-  if(!history.length){el.innerHTML='';return;}
-  const best=Math.max(...history.map(h=>h.score));
-  const avg=Math.round(history.reduce((a,h)=>a+h.score,0)/history.length*10)/10;
-  const total=history.length;
-  el.innerHTML=`<div class="stat-grid">
-    <div class="stat"><div class="stat-label">Tentativas</div><div class="stat-val">${total}</div></div>
-    <div class="stat"><div class="stat-label">Melhor resultado</div><div class="stat-val" style="color:#3b6d11">${best}/14</div></div>
-    <div class="stat"><div class="stat-label">Média de acertos</div><div class="stat-val" style="color:#5434b7">${avg}</div></div>
-  </div>`;
-}
-
-function renderRankTable(id,limit){
-  const el=document.getElementById(id);
-  if(!history.length){el.innerHTML='<div class="empty">Nenhuma tentativa registrada ainda.</div>';return;}
-  const sorted=[...history].sort((a,b)=>b.score-a.score||a.ts-b.ts);
-  const rows=sorted.slice(0,limit).map((h,i)=>{
-    const m=i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1;
-    const top=i<3?'class="top"':'';
-    return`<tr ${top}><td>${m}</td><td style="font-weight:${i<3?600:400}">${h.score}/14</td><td>${h.pct}%</td><td>${h.date}</td><td>${h.time}</td></tr>`;
+async function loadRanking(containerId,limit){
+  const el=document.getElementById(containerId);
+  el.innerHTML='<div style="color:#888780;font-size:13px;padding:.5rem 0">A carregar ranking...</div>';
+  const entries=await loadFromFirebase();
+  if(!entries.length){
+    el.innerHTML='<div class="empty">Ainda ninguém jogou. Sê o primeiro! 🚀</div>';
+    return;
+  }
+  entries.sort((a,b)=>b.score-a.score||a.ts-b.ts);
+  const shown=entries.slice(0,limit);
+  const rows=shown.map((h,i)=>{
+    const medal=i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1)+'.';
+    const cls=i<3?'class="top"':'';
+    return`<tr ${cls}><td>${medal}</td><td style="font-weight:${i<3?600:400}">${h.name||'Anónimo'}</td><td>${h.score}/14</td><td>${h.pct}%</td><td>${h.date}</td><td>${h.time}</td></tr>`;
   }).join('');
   el.innerHTML=`<div class="card-sm"><table>
-    <thead><tr><th>#</th><th>Acertos</th><th>%</th><th>Data</th><th>Hora</th></tr></thead>
+    <thead><tr><th>#</th><th>Nome</th><th>Acertos</th><th>%</th><th>Data</th><th>Hora</th></tr></thead>
     <tbody>${rows}</tbody>
   </table></div>`;
 }
 
-function clearHistory(){
-  if(!confirm('Deseja apagar todo o histórico de tentativas?'))return;
-  history=[];
-  try{localStorage.removeItem('quiz_rh_v2');}catch(e){}
-  renderRankTable('full-rank',50);
-}
-
 showScreen('home');
+loadRanking('home-rank',5);
 </script>
 </body>
 </html>
